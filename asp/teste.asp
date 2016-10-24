@@ -1,0 +1,1 @@
+<form name="form1" action="<%request.ServerVariables("SCRIPT_NAME")%>" method="post" onSubmit="return "></form>

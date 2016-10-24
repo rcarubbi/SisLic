@@ -1,0 +1,67 @@
+.menuFonte{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+ul#.menuEstilo,
+ul#.menuEstilo ul {
+	margin: 0;
+	padding: 0;
+	width: 100px; /* Width of Menu Items */
+/*	border-bottom: 1px solid #ccc;
+	background: #fff;*/ /* IE6 Bug */
+	font-size: 100%;
+
+	}
+
+ul#.menuEstilo li {
+	position: relative;
+	list-style: none;
+	
+	}
+
+ul#.menuEstilo li a {
+	display: block;
+	text-decoration: none;
+	color: #f5f5f5;
+	padding: 5px;
+	/*border: 1px solid #ccc;*/
+	border-bottom: 1px dotted #333333;
+	}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul#.menuEstilo li { float: left; height: 1%; }
+* html ul#.menuEstilo li a { height: 1%; }
+/* End */
+
+ul#.menuEstilo ul {
+	position: absolute;
+	display: none;
+	left: 99px; /* Set 1px less than menu width */
+	top: 0;
+	
+	}
+
+ul#.menuEstilo li ul li a { 
+	padding: 2px 5px; background-color:#333333; 
+} /* Sub Menu Styles */
+
+ul#.menuEstilo li:hover ul ul,
+ul#.menuEstilo li:hover ul ul ul,
+ul#.menuEstilo li.over ul ul,
+ul#.menuEstilo li.over ul ul ul { display: none; } /* Hide sub-menus initially */
+
+ul#.menuEstilo li:hover ul,
+ul#.menuEstilo li li:hover ul,
+ul#.menuEstilo li li li:hover ul,
+ul#.menuEstilo li.over ul,
+ul#.menuEstilo li li.over ul,
+ul#.menuEstilo li li li.over ul { display: block; } /* The magic */
+
+ul#.menuEstilo li.menuparent { background: transparent url(images/mais.gif) right center no-repeat; }
+
+ul#.menuEstilo li.menuparent:hover,
+ul#.menuEstilo li.over { 
+background-color: #333333; 
+}
+
+ul#.menuEstilo li a:hover { color: #E2144A; }

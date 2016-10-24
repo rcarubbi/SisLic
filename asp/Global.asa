@@ -1,0 +1,32 @@
+
+<script language="vbscript" runat="server"> 
+
+sub Application_OnStart()  
+
+	dim rsParametros, SqlParametros, Conn
+	
+	Set Conn = Server.CreateObject("ADODB.Connection")
+		
+	conn.open "Provider=SQLNCLI;Server=MICRO7\SQLEXPRESS;Database=SisLic;UID=sa;PWD=!2C9|2R2#SL1;" 
+	
+	
+	SqlParametros = "SELECT * FROM Parametros WHERE valor is not null and valor <> '' and ativo = 1"
+	set rsParametros = conn.execute(SqlParametros)
+	
+	Do While not rsParametros.eof
+		Application("Par_" & rsParametros("id")) = rsParametros("valor")
+		rsParametros.MoveNext
+	Loop
+	rsParametros.close : Set rsParametros = nothing
+end sub
+
+sub Application_OnEnd()
+
+	application.Contents.RemoveAll()
+	
+End sub 
+
+
+
+
+</script>
